@@ -1,0 +1,7 @@
+package model.tableModel;
+
+public class ItemMovabilityTM {
+    String itemCode;
+    int soldCount;
+    int remainingCount;
+}

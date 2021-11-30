@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="cashierDashboardContext" prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CashierDashboardFormController">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="1080.0" prefWidth="395.0" style="-fx-background-color: #015a38;">
+         <children>
+            <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" contentDisplay="CENTER" layoutX="1.0" layoutY="386.0" onAction="#manageCustomersOnAction" opacity="0.88" prefHeight="85.0" prefWidth="395.0" ripplerFill="WHITE" style="-fx-background-color: #004d2d;" text="Manage Customers" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+            </JFXButton>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="28.0" layoutY="403.0" opacity="0.95" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" layoutX="1.0" layoutY="471.0" onAction="#placeOrdersOnAction" opacity="0.88" prefHeight="85.0" prefWidth="395.0" ripplerFill="WHITE" style="-fx-background-color: #004d2d;" text="Place Orders" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+            </JFXButton>
+            <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="31.0" layoutY="495.0" opacity="0.95" pickOnBounds="true" preserveRatio="true" />
+            <JFXButton fx:id="logoutButton" alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" layoutX="74.0" layoutY="928.0" onAction="#backToLoginForm" prefHeight="56.0" prefWidth="242.0" ripplerFill="BLACK" style="-fx-background-color: #181B20;" text="Logout" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </JFXButton>
+            <Label layoutX="18.0" layoutY="1041.0" prefHeight="33.0" prefWidth="141.0" text="VERSION 1.0.0" textFill="WHITE">
+               <font>
+                  <Font name="System Italic" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="238.0" fitWidth="295.0" layoutX="55.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/companyLogo2.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton alignment="BASELINE_LEFT" buttonType="RAISED" contentDisplay="CENTER" layoutX="1.0" layoutY="556.0" onAction="#manageOrdersOnAction" opacity="0.88" prefHeight="85.0" prefWidth="395.0" ripplerFill="WHITE" style="-fx-background-color: #004d2d;" text="Manage Orders" textFill="WHITE">
+               <font>
+                  <Font size="27.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="90.0" />
+               </padding>
+            </JFXButton>
+            <ImageView fitHeight="40.0" fitWidth="41.0" layoutX="28.0" layoutY="573.0" opacity="0.95" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="cashierPerformanceContext" layoutX="395.0" prefHeight="1080.0" prefWidth="1525.0" style="-fx-background-color: black;" />
+   </children>
+</AnchorPane>

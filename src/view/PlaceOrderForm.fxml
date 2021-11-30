@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pageContext" prefHeight="1080.0" prefWidth="1525.0" style="-fx-background-color: green;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PlaceOrderFormController">
+   <children>
+      <ImageView fitHeight="945.0" fitWidth="1525.0" pickOnBounds="true">
+         <image>
+            <Image url="@../asset/loginContextBG.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="485.0" fitWidth="1461.0" layoutX="31.0" layoutY="429.0" pickOnBounds="true">
+         <image>
+            <Image url="@../asset/BG7.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tblCart" cache="true" layoutX="28.0" layoutY="380.0" prefHeight="537.0" prefWidth="1467.0" style="-fx-background-color: Transparent;" stylesheets="@../style/tableStyle.css">
+        <columns>
+          <TableColumn fx:id="colItemCode" prefWidth="637.66672706604" text="Item Code" />
+            <TableColumn fx:id="colQty" prefWidth="637.66672706604" text="Quantity" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="828.3333129882812" text="Unit Price" />
+            <TableColumn fx:id="colDiscount" prefWidth="244.0" text="Discount" />
+            <TableColumn fx:id="colPrice" prefWidth="243.0" text="Price" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <AnchorPane layoutY="945.0" prefHeight="135.0" prefWidth="1525.0" rotate="180.0" style="-fx-background-color: #015a38;">
+         <children>
+            <Label fx:id="lblDate" layoutX="922.0" layoutY="67.0" prefHeight="56.0" prefWidth="531.0" rotate="180.0" text="Wednesday, 15 September 2020" textFill="WHITE">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblTime" layoutX="1273.0" layoutY="10.0" prefHeight="56.0" prefWidth="180.0" rotate="180.0" text="10 : 59 : 35 PM" textFill="WHITE">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnPlaceOrder" buttonType="RAISED" layoutX="104.0" layoutY="36.0" onAction="#placeOrderOnAction" prefHeight="58.0" prefWidth="195.0" ripplerFill="WHITE" rotate="180.0" style="-fx-background-color: white; -fx-background-radius: 30;" text="Place Order" textFill="#015a38">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblItemCount" layoutX="596.0" layoutY="42.0" prefHeight="56.0" prefWidth="209.0" rotate="180.0" text="Item Count : 13" textFill="WHITE">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="1165.0" layoutY="17.0" prefHeight="42.0" prefWidth="174.0" text="Total" textFill="WHITE">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTotal" layoutX="1165.0" layoutY="51.0" prefHeight="73.0" prefWidth="352.0" text="Rs. 34250.00" textFill="WHITE">
+         <font>
+            <Font size="53.0" />
+         </font>
+      </Label>
+      <Label layoutX="1165.0" layoutY="134.0" prefHeight="42.0" prefWidth="109.0" text="Order Id" textFill="WHITE">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblOrderId" layoutX="1165.0" layoutY="158.0" prefHeight="73.0" prefWidth="352.0" text="O-0021" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="btnClear" buttonType="RAISED" layoutX="1140.0" layoutY="311.0" onAction="#clearItemOnAction" prefHeight="47.0" prefWidth="148.0" ripplerFill="#479045" style="-fx-background-color: #3E8D16; -fx-background-radius: 30;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="1301.0" layoutY="312.0" onAction="#addToCartOnAction" prefHeight="47.0" prefWidth="180.0" ripplerFill="#479045" style="-fx-background-color: #3E8D16; -fx-background-radius: 30;" text="Add to Cart" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField layoutX="87.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: white;" />
+      <JFXComboBox fx:id="cmbCustomer" layoutX="85.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" />
+      <JFXTextField layoutX="612.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" style="-fx-background-color: white;" />
+      <JFXComboBox fx:id="cmbItem" layoutX="612.0" layoutY="50.0" prefHeight="42.0" prefWidth="215.0" />
+      <AnchorPane layoutX="320.0" layoutY="13.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtCustId" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="C-0001" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="98.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Customer ID" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="320.0" layoutY="88.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtCustName" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="Mahela Jayawardene" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="124.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Customer Name" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="320.0" layoutY="163.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtCustAddress" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="Colombo 7" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="138.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Customer Address" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="320.0" layoutY="238.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtCustContact" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="077-7568836" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="137.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Customer Contact" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="320.0" layoutY="313.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtCustNic" editable="false" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="200019901197" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="108.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Customer NIC" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="841.0" layoutY="13.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtItemCode" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="M-0001" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="84.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Item Code" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="841.0" layoutY="88.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtDescription" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="Description of item" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="91.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Description" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="841.0" layoutY="163.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtQtyOnHand" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="23" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="138.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Quantity On Hand" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="841.0" layoutY="238.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtUnitPrice" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="345.00" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="80.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Unit Price" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="841.0" layoutY="313.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtDiscountPercent" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="25%" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="157.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Discount Percentage" />
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1168.0" layoutY="239.0" prefHeight="53.0" prefWidth="269.0" styleClass="textPane" stylesheets="@../style/textFieldStyle.css">
+         <children>
+            <TextField fx:id="txtQuantity" layoutX="13.0" layoutY="5.0" prefHeight="44.0" prefWidth="233.0" promptText="200" styleClass="textField">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </TextField>
+            <Label layoutX="13.0" prefHeight="5.0" prefWidth="72.0" style="-fx-background-color: #FFFFFF;">
+               <font>
+                  <Font size="1.0" />
+               </font>
+            </Label>
+            <Label layoutX="13.0" layoutY="-9.0" styleClass="textLabel" text="Quantity" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
